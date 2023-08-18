@@ -29,6 +29,7 @@ const Alert = ({ preview }: Props) => {
             </>
           ) : (
             <>
+            This is an alert
               The source code for this blog is{' '}
               <a
                 href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
