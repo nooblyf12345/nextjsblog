@@ -1,35 +1,19 @@
 version: '3.1'
 
 services:  
-  # adminer:
-  #   image: adminer
-  #   restart: always
-  #   depends_on: 
-  #     - db
-  #   ports:
-  #     - 8070:8070
-  inventory:
+  blog_service:
+    container_name: blog_service
     build: blog-starter-app
     # command: sh ./docker-entrypoint.sh
     restart: always
     image: blog-starter-app
     ports:
       - "3000:3000"
-    # environment:
-    #   - NODE_ENV=production
-    #   - MONGO_USERNAME=$MONGO_USERNAME
-    #   - MONGO_PASSWORD=$MONGO_PASSWORD
-    #   - MONGO_HOSTNAME=mongodb
-    #   - MONGO_PORT=$MONGO_PORT
-    #   - MONGO_DB=$INVENTORY_MONGO
-      # - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
-    # depends_on:
-    #   - mongodb
-    # networks:
-    #   - node-network
+    networks:
+      - public-network
 
 
 
-# networks:
-#   node-network:
-#     driver: bridge
+networks:
+  public-network:
+    driver: bridge
