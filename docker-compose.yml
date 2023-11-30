@@ -16,4 +16,4 @@ services:
 
 networks:
   public-network:
-    driver: bridge
+    external: true
